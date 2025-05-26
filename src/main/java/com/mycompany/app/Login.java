@@ -24,12 +24,12 @@ public class Login {
         this.loginPassword = password;
     }
     
-    private boolean checkUserName(String username) {
+    public boolean checkUserName(String username) {
         int length = username.length();
         return username.contains("_" ) && length <= 5;
     }
     
-    private boolean checkPasswordComplexity(String password) {
+    public boolean checkPasswordComplexity(String password) {
         int len = password.length();
         char character;
         int specialCount = 0;
@@ -53,7 +53,7 @@ public class Login {
         return false;
     } 
     
-    private boolean checkCellPhoneNumber(String cellNum) {
+    public boolean checkCellPhoneNumber(String cellNum) {
         // Define the pattern (XXX) XXX-XXXX, where X is a digit
         String regex = "^\\+27\\d{2}\\d{3}\\d{4}$";
         // Create a pattern object
@@ -80,8 +80,8 @@ public class Login {
         }
         
         else if (!checkCellPhoneNumber(cellNum)) {
-            return "Cell phone number incorrectly formatted or "
-                    + "does not contain internation code";
+            return "Cell phone number incorrectly formatted or"
+                    + " does not contain internation code";
         }
         
         else{
